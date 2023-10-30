@@ -19,7 +19,7 @@ const Registro = () => {
 
     // Envia los datos al servidor
     axios
-      .post("http://localhost:3001/registro", {
+      .post("https://rifas-web-m9rx.vercel.app//registro", {
         nombre: nombre,
         contrasena: contrasena,
       })

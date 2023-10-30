@@ -39,7 +39,7 @@ const Talonarios = () => {
     formData.append("loteria", loteria);
     formData.append("imagen", imagen); // Cambiado a "imagenPath"
 
-    Axios.post("http://localhost:3001/create", formData)
+    Axios.post("https://rifas-web-m9rx.vercel.app//create", formData)
       .then(() => {
         alert("Talonario creado");
         resetForm(); // Restablece los campos después de enviar los datos con éxito

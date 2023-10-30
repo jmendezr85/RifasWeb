@@ -12,7 +12,7 @@ const Boletas = () => {
   const [filtroNombre, setFiltroNombre] = useState("");
 
   const obtenerBoletas = useCallback(() => {
-    Axios.get(`http://localhost:3001/boletas/${talonarioId}`)
+    Axios.get(`https://rifas-web-m9rx.vercel.app//boletas/${talonarioId}`)
       .then((response) => {
         setBoletas(response.data);
       })
@@ -33,7 +33,7 @@ const Boletas = () => {
 
   const actualizarBoleta = () => {
     const boletaId = boletaSeleccionada.id;
-    Axios.put(`http://localhost:3001/boletas/${boletaId}`, {
+    Axios.put(`https://rifas-web-m9rx.vercel.app//boletas/${boletaId}`, {
       nombre: nombreEditado,
       estado: estadoEditado,
     })

@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import { Link } from "react-router-dom";
 
 const Tarjeta = ({ tarjeta, onDelete, isAuthenticated }) => {
-  const baseUrl = "http://localhost:3001/uploads/";
+  const baseUrl = "https://rifas-web-m9rx.vercel.app//uploads/";
   const imagenUrl = `${baseUrl}${tarjeta.imagen}`;
   const formattedDate = format(new Date(tarjeta.fecha), "dd/MM/yyyy");
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
