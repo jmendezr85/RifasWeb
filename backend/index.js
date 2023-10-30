@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql2");
+const mysql = require("mysql");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
@@ -10,12 +10,25 @@ const secretKey = 'test_1'
 app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-const db = mysql.createConnection({
+
+/*const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "rifasdb",
+});*/
+
+const db = mysql.createConnection({
+  host: "www.virtualcopias.com",
+  port: "3306",
+  user: "u624538985_talonario",
+  password: "jMendezr_1235689*-.",
+  database: "u624538985_talonario_web",
 });
+
+setInterval(function () {
+  db.query('SELECT 1');
+}, 5000);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
