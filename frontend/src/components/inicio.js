@@ -8,8 +8,8 @@ const Inicio = ({ userName, token }) => {
   const obtenerTarjetas = () => {
     const authToken = localStorage.getItem("authToken");
     const url = authToken
-      ? "https://rifas-web-m9rx.vercel.app//tarjetas/autenticados"
-      : "https://rifas-web-m9rx.vercel.app//tarjetas/no-autenticados";
+      ? "https://rifas-web-m9rx.vercel.app/tarjetas/autenticados"
+      : "https://rifas-web-m9rx.vercel.app/tarjetas/no-autenticados";
 
     Axios.get(url)
       .then((response) => {
@@ -23,7 +23,7 @@ const Inicio = ({ userName, token }) => {
   };
 
   const handleDelete = (tarjetaId) => {
-    Axios.delete(`https://rifas-web-m9rx.vercel.app//delete/${tarjetaId}`)
+    Axios.delete(`https://rifas-web-m9rx.vercel.app/delete/${tarjetaId}`)
       .then(() => {
         obtenerTarjetas(); // Actualiza la lista de tarjetas después de eliminar
         console.log("Tarjeta eliminada con éxito");

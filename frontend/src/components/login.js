@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("https://rifas-web-m9rx.vercel.app//login", {
+      const response = await axios.post("https://rifas-web-m9rx.vercel.app/login", {
         nombre: nombre,
         contrasena: contrasena,
       });
