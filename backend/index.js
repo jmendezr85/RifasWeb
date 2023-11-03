@@ -7,7 +7,12 @@ const cors = require("cors");
 const authenticate = require("./middlewares/authMiddleware");
 const secretKey = 'test_1'
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://rifas-web.vercel.app/', // Reemplaza con el dominio real de tu aplicación Vercel
+  optionsSuccessStatus: 200 // Algunas versiones de cors requieren esto
+};
+
+app.use(cors(corsOptions));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
